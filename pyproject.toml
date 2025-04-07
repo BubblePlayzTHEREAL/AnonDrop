@@ -1,0 +1,21 @@
+[project]
+name = "AnonDrop"
+version = "1.0.0"
+description = "A direct access to AnonDrop.net"
+readme = "README.md"
+
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev-requirements = {file = "dev-requirements.txt"}
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+
+
+
+
+
