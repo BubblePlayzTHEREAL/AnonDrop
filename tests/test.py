@@ -1,6 +1,6 @@
 import AnonDrop
 
-AnonDrop.CLIENT_ID = "1318419994400526488"
+AnonDrop.CLIENT_ID = "CLIENT ID HERE"
 
 output = AnonDrop.upload("test.txt")
 print(output.fileurl)
