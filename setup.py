@@ -8,7 +8,7 @@ setup(
     description="A package for uploading and deleting files using AnonDrop API",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/anondrop-pypackage",
+    url="https://github.com/BubblePlayzTHEREAL/AnonDrop",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
