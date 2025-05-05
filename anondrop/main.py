@@ -11,7 +11,6 @@ class UploadOutput:
 
 
 def upload(file_path, filename=None):
-    global CLIENT_ID
     if CLIENT_ID is None:
         raise ValueError("CLIENT_ID is not set. Please set it before uploading.")
     if filename is None:
@@ -37,7 +36,6 @@ def upload(file_path, filename=None):
 
 
 def delete(fileid):
-    global CLIENT_ID
     if CLIENT_ID is None:
         raise ValueError("CLIENT_ID is not set. Please set it before deleting.")
     res = requests.post(f"https://anondrop.net/delete/{fileid}?key=" + CLIENT_ID)
