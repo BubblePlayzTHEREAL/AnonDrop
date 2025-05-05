@@ -26,10 +26,15 @@ To upload a file, you need to set your `CLIENT_ID` and call the `upload` functio
 import anondrop
 
 anondrop.setClientID('your_client_id_here')
-file_path = 'path/to/your/file.txt'
+file_path = 'path/to/tag.sk'
 uploaded_file = anondrop.upload(file_path)
 
 print(f"File URL: {uploaded_file.fileurl}")
+# File URL: https://anondrop.net/1369090222146457662/tag.sk
+print(f"File ID: {uploaded_file.fileid}")
+# File ID: 1369090222146457662
+print(f"URL: {uploaded_file.filelink}")
+# File ID: https://anondrop.net/1369090222146457662
 ```
 
 ### Deleting a File
