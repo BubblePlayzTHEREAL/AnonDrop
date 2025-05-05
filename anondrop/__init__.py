@@ -1,6 +1,8 @@
 from .main import upload, delete, UploadOutput
+from .config import CLIENT_ID
 
 
 def setClientID(client_id: str):
-    global CLIENT_ID
-    CLIENT_ID = client_id
+    from . import config
+
+    config.CLIENT_ID = client_id
