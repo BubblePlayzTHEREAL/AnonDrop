@@ -23,11 +23,11 @@ pip install anondrop
 To upload a file, you need to set your `CLIENT_ID` and call the `upload` function:
 
 ```python
-from anondrop.main import upload
+import anondrop
 
-CLIENT_ID = 'your_client_id_here'
+anondrop.setClientID('your_client_id_here')
 file_path = 'path/to/your/file.txt'
-uploaded_file = upload(file_path)
+uploaded_file = anondrop.upload(file_path)
 
 print(f"File URL: {uploaded_file.fileurl}")
 ```
@@ -37,10 +37,11 @@ print(f"File URL: {uploaded_file.fileurl}")
 To delete a file, use the `delete` function with the file ID:
 
 ```python
-from anondrop.main import delete
+import anondrop
 
+anondrop.setClientID('your_client_id_here')
 file_id = 'your_file_id_here'
-delete(file_id)
+anondrop.delete(file_id)
 print("File deleted successfully.")
 ```
 
