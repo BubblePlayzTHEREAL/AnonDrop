@@ -18,6 +18,10 @@ pip install anondrop
 
 ## Usage
 
+### Getting Client ID
+
+Head to the [AnonDrop Dashboard](https://anondrop.net/dashboard) and click your id in the top left
+
 ### Uploading a File
 
 To upload a file, you need to set your `CLIENT_ID` and call the `upload` function:
