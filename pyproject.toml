@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "anondrop"
-version = "0.1.1"
+version = "0.1.2"
 description = "A package for uploading and deleting files using AnonDrop API"
 readme = "README.md"
 license = {text = "MIT"}
