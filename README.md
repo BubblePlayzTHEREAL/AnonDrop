@@ -4,6 +4,7 @@ AnonDrop is a Python package that allows users to upload and delete files using 
 
 ## Features
 
+
 - Upload files to AnonDrop with ease.
 - Delete files from AnonDrop using their unique file ID.
 - Simple and intuitive API.
@@ -20,7 +21,7 @@ pip install anondrop
 
 ### Getting Client ID
 
-Head to the [AnonDrop Dashboard](https://anondrop.net/dashboard) and click your id in the top left
+Head to the <a href="https://anondrop.net/dashboard" target="_blank">AnonDrop Dashboard</a> and click your id in the top left
 
 ### Uploading a File
 
