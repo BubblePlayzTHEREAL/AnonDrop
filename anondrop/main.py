@@ -1,6 +1,6 @@
 import requests
 import re
-from .config import CLIENT_ID
+from . import config
 
 
 class UploadOutput:
@@ -11,14 +11,15 @@ class UploadOutput:
 
 
 def upload(file_path, filename=None):
-    if CLIENT_ID is None:
+    if config.CLIENT_ID is None:
         raise ValueError("CLIENT_ID is not set. Please set it before uploading.")
     if filename is None:
         filename = file_path.split("/")[-1]
     with open(file_path, "rb") as file:
         b64_data = file.read()
     res = requests.get(
-        f"https://anondrop.net/initiateupload?filename={filename}&key=" + CLIENT_ID,
+        f"https://anondrop.net/initiateupload?filename={filename}&key="
+        + config.CLIENT_ID,
     )
     hash = res.text
     upload_url = "https://anondrop.net/uploadchunk?session_hash=" + hash
@@ -36,9 +37,9 @@ def upload(file_path, filename=None):
 
 
 def delete(fileid):
-    if CLIENT_ID is None:
+    if config.CLIENT_ID is None:
         raise ValueError("CLIENT_ID is not set. Please set it before deleting.")
-    res = requests.post(f"https://anondrop.net/delete/{fileid}?key=" + CLIENT_ID)
+    res = requests.post(f"https://anondrop.net/delete/{fileid}?key=" + config.CLIENT_ID)
     if res.text == "deleted":
         return
     else:
