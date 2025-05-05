@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anondrop"
+version = "0.1.0"
+description = "A package for uploading and deleting files using AnonDrop."
+authors = [{ name = "BubblePlayz", discord = "bubbleplayz" }]
+license = { text = "MIT" }
+readme = "README.md"
+homepage = "https://anondrop.net/"
+repository = "https://github.com/yourusername/anondrop-pypackage"
+keywords = ["anondrop", "upload", "delete", "files"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests>=2.25.1"
+]
