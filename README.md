@@ -38,7 +38,7 @@ print(f"File URL: {uploaded_file.fileurl}")
 # File URL: https://anondrop.net/1369090222146457662/tag.sk
 print(f"File ID: {uploaded_file.fileid}")
 # File ID: 1369090222146457662
-print(f"URL: {uploaded_file.filelink}")
+print(f"URL: {uploaded_file.filepage}")
 # File ID: https://anondrop.net/1369090222146457662
 ```
 
@@ -53,12 +53,12 @@ anondrop.setClientID('your_client_id_here')
 link = 'https://raw.githubusercontent.com/BubblePlayzTHEREAL/AnonDrop/refs/heads/main/setup.py'
 uploaded_file = anondrop.remoteUpload(link)
 
-print(f"File URL: {uploaded_file.fileurl}")
-# File URL: https://anondrop.net/1369090222146457662/tag.sk
+print(f"File URL: {uploaded_file.fileurl}") # The url is not returned so this doesnt work.
+# File URL: None
 print(f"File ID: {uploaded_file.fileid}")
-# File ID: 1369090222146457662
-print(f"URL: {uploaded_file.filelink}")
-# File ID: https://anondrop.net/1369090222146457662
+# File ID: 1378090451105484880
+print(f"URL: {uploaded_file.filepage}")
+# File ID: https://anondrop.net/1378090451105484880
 ```
 
 ### Deleting a File

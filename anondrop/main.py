@@ -47,7 +47,7 @@ def remoteUpload(url):
     if match:
         link = match.group(1)
         fileid = link.split("/")[-1]
-        return UploadOutput(link, link, fileid)
+        return UploadOutput(None, link, fileid)
     else:
         raise Exception("Remote upload failed.")
 
