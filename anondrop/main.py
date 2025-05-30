@@ -36,6 +36,21 @@ def upload(file_path, filename=None):
         raise Exception("Upload failed.")
 
 
+def remoteUpload(url):
+    if config.CLIENT_ID is None:
+        raise ValueError("CLIENT_ID is not set. Please set it before uploading.")
+    res = requests.get(
+        f"https://anondrop.net/remoteuploadurl?key=${config.CLIENT_ID}&url=${url}&session_hash=${config.CLIENT_ID}-${url}"
+    )
+    match = re.search(r"href='(.*?)'", res.text)
+    if match:
+        link = match.group(1)
+        fileid = link.split("/")[-1]
+        return UploadOutput(link, link, fileid)
+    else:
+        raise Exception("Remote upload failed.")
+
+
 def delete(fileid):
     if config.CLIENT_ID is None:
         raise ValueError("CLIENT_ID is not set. Please set it before deleting.")
