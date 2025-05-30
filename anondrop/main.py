@@ -40,8 +40,9 @@ def remoteUpload(url):
     if config.CLIENT_ID is None:
         raise ValueError("CLIENT_ID is not set. Please set it before uploading.")
     res = requests.get(
-        f"https://anondrop.net/remoteuploadurl?key=${config.CLIENT_ID}&url=${url}&session_hash=${config.CLIENT_ID}-${url}"
+        f"https://anondrop.net/remoteuploadurl?key={config.CLIENT_ID}&url={url}&session_hash={config.CLIENT_ID}-{url}"
     )
+    print("Response text:", res.text)  # Debugging line
     match = re.search(r"href='(.*?)'", res.text)
     if match:
         link = match.group(1)

@@ -1,4 +1,4 @@
-from .main import upload, delete, UploadOutput
+from .main import upload, delete, remoteUpload, UploadOutput
 from . import config
 
 

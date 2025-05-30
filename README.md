@@ -42,6 +42,25 @@ print(f"URL: {uploaded_file.filelink}")
 # File ID: https://anondrop.net/1369090222146457662
 ```
 
+### Uploading a File Remotely
+
+To upload a remote file, first have your `CLIENT_ID` set, then call the `remoteUpload` function:
+
+```python
+import anondrop
+
+anondrop.setClientID('your_client_id_here')
+link = 'https://raw.githubusercontent.com/BubblePlayzTHEREAL/AnonDrop/refs/heads/main/setup.py'
+uploaded_file = anondrop.remoteUpload(link)
+
+print(f"File URL: {uploaded_file.fileurl}")
+# File URL: https://anondrop.net/1369090222146457662/tag.sk
+print(f"File ID: {uploaded_file.fileid}")
+# File ID: 1369090222146457662
+print(f"URL: {uploaded_file.filelink}")
+# File ID: https://anondrop.net/1369090222146457662
+```
+
 ### Deleting a File
 
 To delete a file, use the `delete` function with the file ID:
