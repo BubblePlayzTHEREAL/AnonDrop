@@ -11,10 +11,10 @@ AnonDrop is a Python package that allows users to upload and delete files using 
 
 ## Installation
 
-You can install the AnonDrop package using pip:
+You can install and update the AnonDrop package using pip:
 
 ```
-pip install anondrop
+pip install --upgrade anondrop
 ```
 
 ## Usage
