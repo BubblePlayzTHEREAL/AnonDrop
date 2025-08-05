@@ -26,19 +26,28 @@ def upload(file_path, filename=None, chunksize=8):
         + config.CLIENT_KEY,
     )
     hash = res.text
-    file_chunks = list(chunks(file_path, chunksize))
-    upload_url = "https://anondrop.net/uploadchunk?session_hash=" + hash
-    for chunk in file_chunks:
-        files = {"file": ("blob", chunk, "application/octet-stream")}
+    if chunksize != 0:
+        file_chunks = list(chunks(file_path, chunksize))
+        upload_url = "https://anondrop.net/uploadchunk?session_hash=" + hash
+        for chunk in file_chunks:
+            files = {"file": ("blob", chunk, "application/octet-stream")}
+            res = requests.post(upload_url, files=files)
+            if res.text != "done":
+                raise Exception(
+                    "Chunk #"
+                    + (file_chunks.index(chunk) + 1)
+                    + " out of "
+                    + (len(file_chunks) + 1)
+                    + " failed."
+                )
+    else:
+        with open(file_path, "rb") as file:
+            b64_data = file.read()
+        upload_url = "https://anondrop.net/uploadchunk?session_hash=" + hash
+        files = {"file": ("blob", b64_data, "application/octet-stream")}
         res = requests.post(upload_url, files=files)
         if res.text != "done":
-            raise Exception(
-                "Chunk #"
-                + (file_chunks.index(chunk) + 1)
-                + " out of "
-                + (len(file_chunks) + 1)
-                + " failed."
-            )
+            raise Exception("Upload failed, response: " + res.text)
     link = None
     res = requests.get("https://anondrop.net/endupload?session_hash=" + hash)
     match = re.search(r"href='(.*?)'", res.text)

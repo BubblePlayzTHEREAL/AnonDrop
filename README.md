@@ -65,6 +65,8 @@ print(f"URL: {uploaded_file.filepage}")
 
 Do the same as the first, but this time add `chunksize=size in MB`
 
+By default, it cuts into 8MB chunks. **If you want to disable chunking, set chunksize to 0!**
+
 ```python
 import anondrop
 
