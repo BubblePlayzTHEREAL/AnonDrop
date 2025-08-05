@@ -12,7 +12,7 @@ class UploadOutput:
 
 def chunks(file_name, size):
     with open(file_name, "rb") as f:
-        while content := f.read(size * 1000000):
+        while content := f.read(int(size * 1000000)):
             yield content
 
 
