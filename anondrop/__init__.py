@@ -11,5 +11,6 @@ def setClientID(client_id: str):
     warnings.warn(
         "setClientID will soon be deprecated, use setClientKey instead",
         DeprecationWarning,
+        stacklevel=2,
     )
     config.CLIENT_KEY = client_id

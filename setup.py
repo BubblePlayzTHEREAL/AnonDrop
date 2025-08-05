@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="anondrop",
-    version="0.1.4",
+    version="0.2.0",
     author="BubblePlayz",
     author_email="mylaptop4768@gmail.com",
     description="A package for uploading and deleting files using AnonDrop API",

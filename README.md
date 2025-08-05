@@ -42,6 +42,44 @@ print(f"URL: {uploaded_file.filepage}")
 # File ID: https://anondrop.net/1369090222146457662
 ```
 
+### Uploading a file with a custom name
+
+Do the same as before, but this time add `filename="filename.ext"`
+
+```python
+import anondrop
+
+anondrop.setClientKey('your_client_key_here')
+file_path = 'path/to/tag.sk'
+uploaded_file = anondrop.upload(file_path, filename="TagGame.sk")
+
+print(f"File URL: {uploaded_file.fileurl}")
+# File URL: https://anondrop.net/1402101757731012719/TagGame.sk
+print(f"File ID: {uploaded_file.fileid}")
+# File ID: 1402101757731012719
+print(f"URL: {uploaded_file.filepage}")
+# File ID: https://anondrop.net/1402101757731012719
+```
+
+### Uploading a file with a custom chunksize
+
+Do the same as the first, but this time add `chunksize=size in MB`
+
+```python
+import anondrop
+
+anondrop.setClientKey('your_client_key_here')
+file_path = 'path/to/tag.sk'
+uploaded_file = anondrop.upload(file_path, chunksize=25)
+
+print(f"File URL: {uploaded_file.fileurl}")
+# File URL: https://anondrop.net/1369090222146457662/tag.sk
+print(f"File ID: {uploaded_file.fileid}")
+# File ID: 1369090222146457662
+print(f"URL: {uploaded_file.filepage}")
+# File ID: https://anondrop.net/1369090222146457662
+```
+
 ### Uploading a File Remotely
 
 To upload a remote file, first have your Client Key set, then call the `remoteUpload` function:
