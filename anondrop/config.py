@@ -1,1 +1,1 @@
-CLIENT_ID = None
+CLIENT_KEY = None

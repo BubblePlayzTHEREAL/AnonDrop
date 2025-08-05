@@ -11,15 +11,15 @@ class UploadOutput:
 
 
 def upload(file_path, filename=None):
-    if config.CLIENT_ID is None:
-        raise ValueError("CLIENT_ID is not set. Please set it before uploading.")
+    if config.CLIENT_KEY is None:
+        raise ValueError("CLIENT_KEY is not set. Please set it before uploading.")
     if filename is None:
         filename = file_path.split("/")[-1]
     with open(file_path, "rb") as file:
         b64_data = file.read()
     res = requests.get(
         f"https://anondrop.net/initiateupload?filename={filename}&key="
-        + config.CLIENT_ID,
+        + config.CLIENT_KEY,
     )
     hash = res.text
     upload_url = "https://anondrop.net/uploadchunk?session_hash=" + hash
@@ -37,10 +37,10 @@ def upload(file_path, filename=None):
 
 
 def remoteUpload(url):
-    if config.CLIENT_ID is None:
-        raise ValueError("CLIENT_ID is not set. Please set it before uploading.")
+    if config.CLIENT_KEY is None:
+        raise ValueError("CLIENT_KEY is not set. Please set it before uploading.")
     res = requests.get(
-        f"https://anondrop.net/remoteuploadurl?key={config.CLIENT_ID}&url={url}&session_hash={config.CLIENT_ID}-{url}"
+        f"https://anondrop.net/remoteuploadurl?key={config.CLIENT_KEY}&url={url}&session_hash={config.CLIENT_KEY}-{url}"
     )
     print("Response text:", res.text)  # Debugging line
     match = re.search(r"href='(.*?)'", res.text)
@@ -53,9 +53,11 @@ def remoteUpload(url):
 
 
 def delete(fileid):
-    if config.CLIENT_ID is None:
-        raise ValueError("CLIENT_ID is not set. Please set it before deleting.")
-    res = requests.post(f"https://anondrop.net/delete/{fileid}?key=" + config.CLIENT_ID)
+    if config.CLIENT_KEY is None:
+        raise ValueError("CLIENT_KEY is not set. Please set it before deleting.")
+    res = requests.post(
+        f"https://anondrop.net/delete/{fileid}?key=" + config.CLIENT_KEY
+    )
     if res.text == "deleted":
         return
     else:

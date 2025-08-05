@@ -21,16 +21,16 @@ pip install anondrop
 
 ### Getting Client ID
 
-Head to the <a href="https://anondrop.net/dashboard" target="_blank">AnonDrop Dashboard</a> and click your id in the top left
+Head to the <a href="https://anondrop.net/dashboard" target="_blank">AnonDrop Dashboard</a> and click your Client Key in the top left
 
 ### Uploading a File
 
-To upload a file, you need to set your `CLIENT_ID` and call the `upload` function:
+To upload a file, you need to set your Client Key and call the `upload` function:
 
 ```python
 import anondrop
 
-anondrop.setClientID('your_client_id_here')
+anondrop.setClientKey('your_client_key_here') # anondrop.setClientID will soon be deprecated to match the website
 file_path = 'path/to/tag.sk'
 uploaded_file = anondrop.upload(file_path)
 
@@ -44,12 +44,12 @@ print(f"URL: {uploaded_file.filepage}")
 
 ### Uploading a File Remotely
 
-To upload a remote file, first have your `CLIENT_ID` set, then call the `remoteUpload` function:
+To upload a remote file, first have your Client Key set, then call the `remoteUpload` function:
 
 ```python
 import anondrop
 
-anondrop.setClientID('your_client_id_here')
+anondrop.setClientKey('your_client_key_here')
 link = 'https://raw.githubusercontent.com/BubblePlayzTHEREAL/AnonDrop/refs/heads/main/setup.py'
 uploaded_file = anondrop.remoteUpload(link)
 
@@ -68,7 +68,7 @@ To delete a file, use the `delete` function with the file ID:
 ```python
 import anondrop
 
-anondrop.setClientID('your_client_id_here')
+anondrop.setClientKey('your_client_key_here')
 file_id = 'your_file_id_here'
 anondrop.delete(file_id)
 print("File deleted successfully.")
