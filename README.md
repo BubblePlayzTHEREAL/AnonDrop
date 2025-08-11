@@ -1,6 +1,6 @@
-# AnonDrop Package
+# Official AnonDrop Package
 
-AnonDrop is a Python package that allows users to upload and delete files using the AnonDrop service. This package provides a simple interface for file management, making it easy to integrate file uploads into your applications.
+AnonDrop is the official Python package that allows users to upload and delete files using the AnonDrop service. This package provides a simple interface for file management, making it easy to integrate file uploads into your applications.
 
 ## Features
 
