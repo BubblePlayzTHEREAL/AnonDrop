@@ -1,6 +1,8 @@
-# Official AnonDrop Package
+# I DO NOT SUPPORT OR CONDONE ANYTHING WRONG THAT MEOW/FOXXY/TEST HAS DONE!!! THIS REPOSITORY WAS MADE FOR FUN! I AM NOT AFFILIATED WITH MEOW/FOXXY/TEST!!!
 
-AnonDrop is the official Python package that allows users to upload and delete files using the AnonDrop service. This package provides a simple interface for file management, making it easy to integrate file uploads into your applications.
+# AnonDrop Package
+
+This AnonDrop package allows users to upload and delete files using the AnonDrop service. This package provides a simple interface for file management, making it easy to integrate file uploads into your applications.
 
 ## Features
 
